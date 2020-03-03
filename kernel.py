@@ -1,17 +1,4 @@
-import math as ms
-import random
-import string 
-import os
-import time
-
-print(os.getcwd())
-try: # initialize file to manage flags
-  os.mkdir("state")
-except FileExistsError:
-  os.chdir("state")
-  for i in os.listdir():
-    os.remove(i)
-  os.chdir("..")
+import string, os, time
 
 try: # initialize file to save data
   os.mkdir("data")
@@ -20,6 +7,16 @@ except FileExistsError:
   for i in os.listdir():
     os.remove(i)
   os.chdir("..")
+print(os.getcwd())
+
+try: # initialize file to manage flags
+  os.mkdir("state")
+except FileExistsError:
+  os.chdir("state")
+  for i in os.listdir():
+    os.remove(i)
+  os.chdir("..")
+
 
 data=[]
 

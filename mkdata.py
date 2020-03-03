@@ -1,5 +1,10 @@
 import os, time
 
+while(not os.path.isdir("data")):
+  print("mkdata: data not found")
+while(not os.path.isdir("state")):
+  print("mkdata: state not found")
+
 for i in range(10): # make 10 files 
   addr="data/" + str(i)
 

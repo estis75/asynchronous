@@ -1,5 +1,10 @@
 import os, time
 
+while(not os.path.isdir("data")):
+  print("processing: data not found")
+while(not os.path.isdir("state")):
+  print("processing: state not found")
+
 while (not os.path.exists("state/kernel_finished")):
   if(not os.path.exists("state/file.path")):
     print("processing: no data")
@@ -14,7 +19,7 @@ while (not os.path.exists("state/kernel_finished")):
     # processing
     print("processing: processing")
     f2 = open("data/pathes", 'a')
-    f2.write(path)
+    f2.write(path + "\n")
     f2.close()
     os.remove("state/busy")
   time.sleep(1)
@@ -32,7 +37,7 @@ else:
     # processing
     print("processing: processing")
     f2 = open("data/pathes", 'a')
-    f2.write(path)
+    f2.write(path + "\n")
     f2.close()
     os.remove("state/busy")
 
